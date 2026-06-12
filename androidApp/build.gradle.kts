@@ -5,8 +5,6 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-
-    id("com.github.gmazzo.buildconfig") version "5.5.1"
 }
 
 kotlin {

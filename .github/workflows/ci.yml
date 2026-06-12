@@ -183,14 +183,14 @@ jobs:
 #      # ditto préserve permissions et liens symboliques du bundle .app,
 #      # ce que le zip interne d'upload-artifact ne garantit pas.
 #      - name: Zip iOS app
-#        run: ditto -c -k --keepParent iosApp/build/Debug-iphonesimulator/WeatherApp.app WeatherApp-simulator.zip
+#        run: ditto -c -k --keepParent iosApp/build/Debug-iphonesimulator/A06_kmp_ambientIT_kmp.app A06_kmp_ambientIT_kmp-simulator.zip
 #
 #      # App lançable dans un simulateur iOS (Xcode) : la dézipper puis la glisser sur le simulateur
 #      - name: Upload iOS app (simulator)
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: iosApp-simulator
-#          path: WeatherApp-simulator.zip
+#          path: A06_kmp_ambientIT_kmp-simulator.zip
 #          if-no-files-found: ignore
 #
 #      # Tests de la logique partagée compilée pour le simulateur iOS (arm64).
