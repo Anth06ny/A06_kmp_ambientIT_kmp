@@ -1,0 +1,9 @@
+package com.amonteiro.a06_kmp_ambientit_kmp
+
+import platform.UIKit.UIDevice
+
+class IOSPlatform: Platform {
+    override val name: String = UIDevice.currentDevice.systemName() + " " + UIDevice.currentDevice.systemVersion
+}
+
+actual fun getPlatform(): Platform = IOSPlatform()
