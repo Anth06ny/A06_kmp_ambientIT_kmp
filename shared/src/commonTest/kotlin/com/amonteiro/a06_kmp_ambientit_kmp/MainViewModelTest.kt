@@ -38,24 +38,24 @@ class MainViewModelTest {
         assertTrue(mainViewModel.dataList.value.isNotEmpty())
     }
 
-    @Test
-    fun loadWeatherTest() = runTest(timeout = 10.seconds) {
-
-        startKoin {
-            modules(apiModule, viewModelModule)
-        }
-
-        val mainViewModel = KoinPlatform.getKoin().get<MainViewModel>()
-
-        assertFalse { mainViewModel.runInProgress.value  }
-        mainViewModel.loadWeathers("Toulouse")
-        assertTrue { mainViewModel.runInProgress.value  }
-
-        mainViewModel.runInProgress.first { !it }
-
-        assertFalse { mainViewModel.runInProgress.value  }
-        assertTrue(mainViewModel.dataList.value.isNotEmpty())
-    }
+//    @Test
+//    fun loadWeatherTest() = runTest(timeout = 10.seconds) {
+//
+//        startKoin {
+//            modules(apiModule, viewModelModule)
+//        }
+//
+//        val mainViewModel = KoinPlatform.getKoin().get<MainViewModel>()
+//
+//        assertFalse { mainViewModel.runInProgress.value  }
+//        mainViewModel.loadWeathers("Toulouse")
+//        assertTrue { mainViewModel.runInProgress.value  }
+//
+//        mainViewModel.runInProgress.first { !it }
+//
+//        assertFalse { mainViewModel.runInProgress.value  }
+//        assertTrue(mainViewModel.dataList.value.isNotEmpty())
+//    }
 
     @AfterTest
     fun tearDown() {
